@@ -28,21 +28,17 @@ from homeassistant.core import ServiceCall
 from homeassistant.helpers import device_registry
 from homeassistant.helpers import entity_registry
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.restore_state import RestoreStateData
+#from homeassistant.helpers.restore_state import RestoreStateData
+from homeassistant.helpers import restore_state
 
 from .api import TplinkDecoApi
 from .const import ATTR_DEVICE_TYPE
-from .const import CONF_CLIENT_POSTFIX
-from .const import CONF_CLIENT_PREFIX
-from .const import CONF_DECO_POSTFIX
-from .const import CONF_DECO_PREFIX
 from .const import CONF_TIMEOUT_ERROR_RETRIES
 from .const import CONF_TIMEOUT_SECONDS
 from .const import CONF_VERIFY_SSL
 from .const import COORDINATOR_CLIENTS_KEY
 from .const import COORDINATOR_DECOS_KEY
 from .const import DEFAULT_CONSIDER_HOME
-from .const import DEFAULT_DECO_POSTFIX
 from .const import DEFAULT_SCAN_INTERVAL
 from .const import DEFAULT_TIMEOUT_ERROR_RETRIES
 from .const import DEFAULT_TIMEOUT_SECONDS
@@ -123,7 +119,8 @@ async def async_create_config_data(hass: HomeAssistant, config_entry: ConfigEntr
 
     # Populate client list with existing entries so that we keep track of disconnected clients
     # since deco list_clients only returns connected clients.
-    last_states = (await RestoreStateData.async_get_instance(hass)).last_states
+    #last_states = (await RestoreStateData.async_get_instance(hass)).last_states
+    last_states = restore_state.async_get(hass).last_states
     for entry in existing_entries:
         if entry.domain != DEVICE_TRACKER_DOMAIN:
             continue
@@ -270,13 +267,6 @@ async def async_migrate_entry(hass, config_entry: ConfigEntry):
     if config_entry.version == 3:
         config_entry.version = 4
         new[CONF_TIMEOUT_SECONDS] = DEFAULT_TIMEOUT_SECONDS
-
-    if config_entry.version == 4:
-        config_entry.version = 5
-        new[CONF_CLIENT_PREFIX] = ""
-        new[CONF_CLIENT_POSTFIX] = ""
-        new[CONF_DECO_PREFIX] = ""
-        new[CONF_DECO_POSTFIX] = DEFAULT_DECO_POSTFIX
 
     hass.config_entries.async_update_entry(config_entry, data=new)
 
