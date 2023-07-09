@@ -28,7 +28,6 @@ from homeassistant.core import ServiceCall
 from homeassistant.helpers import device_registry
 from homeassistant.helpers import entity_registry
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-#from homeassistant.helpers.restore_state import RestoreStateData
 from homeassistant.helpers import restore_state
 
 from .api import TplinkDecoApi
