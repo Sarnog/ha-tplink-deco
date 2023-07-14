@@ -82,7 +82,7 @@ target:
 
 ### HACS
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=amosyuen&repository=ha-tplink-deco&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sarnog&repository=ha-tplink-deco&category=integration)
 
 ### Manual
 
@@ -247,11 +247,11 @@ Some routers give a lot of timeout errors like `Timeout fetching tplink_deco`, w
 
 ### Extra Devices
 
-You may see extra devices show up under the Tp-Link deco integration as per https://github.com/amosyuen/ha-tplink-deco/issues/73. This is expected because the entities use macs for their unique ID. If there is another integration that exposes the same device using their mac, Home Assistant will combine the info from devices that have the same unique ID. This is working as intended since they represent the same device.
+You may see extra devices show up under the Tp-Link deco integration as per https://github.com/sarnog/ha-tplink-deco/issues/73. This is expected because the entities use macs for their unique ID. If there is another integration that exposes the same device using their mac, Home Assistant will combine the info from devices that have the same unique ID. This is working as intended since they represent the same device.
 
 ## Contributions are welcome!
 
-If you want to contribute to this please read the [Contribution guidelines](https://github.com/amosyuen/ha-tplink-deco/blob/main/CONTRIBUTING.md)
+If you want to contribute to this please read the [Contribution guidelines](https://github.com/sarnog/ha-tplink-deco/blob/main/CONTRIBUTING.md)
 
 ## Credits
 
@@ -264,19 +264,19 @@ Code template was mainly taken from [@Ludeeus](https://github.com/ludeeus)'s [in
 [integration_blueprint]: https://github.com/custom-components/integration_blueprint
 [black]: https://github.com/psf/black
 [black-shield]: https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge
-[buymecoffee]: https://paypal.me/amosyuen
+[buymecoffee]: https://paypal.me/sarnog
 [buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
-[commits-shield]: https://img.shields.io/github/commit-activity/y/amosyuen/ha-tplink-deco.svg?style=for-the-badge
-[commits]: https://github.com/amosyuen/ha-tplink-deco/commits/main
+[commits-shield]: https://img.shields.io/github/commit-activity/y/sarnog/ha-tplink-deco.svg?style=for-the-badge
+[commits]: https://github.com/sarnog/ha-tplink-deco/commits/main
 [hacs]: https://hacs.xyz
 [hacsbadge]: https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge
 [exampleimg]: example.png
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [forum]: https://community.home-assistant.io/
-[license-shield]: https://img.shields.io/github/license/amosyuen/ha-tplink-deco.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/badge/maintainer-%40amosyuen-blue.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/sarnog/ha-tplink-deco.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/badge/maintainer-%40sarnog-blue.svg?style=for-the-badge
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [pre-commit-shield]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/amosyuen/ha-tplink-deco.svg?style=for-the-badge
-[releases]: https://github.com/amosyuen/ha-tplink-deco/releases
-[user_profile]: https://github.com/amosyuen
+[releases-shield]: https://img.shields.io/github/release/sarnog/ha-tplink-deco.svg?style=for-the-badge
+[releases]: https://github.com/sarnog/ha-tplink-deco/releases
+[user_profile]: https://github.com/sarnog
